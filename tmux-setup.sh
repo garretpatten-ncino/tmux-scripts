@@ -8,16 +8,16 @@ if [ $? != 0 ]; then
     tmux new-session -d -s $SESSION
 
     tmux rename-window 'home'
-    tmux send-keys -t $SESSION:0 'home' C-m
+    tmux send-keys -t $SESSION:0 'clear && echo "" && fastfetch' C-m
 
-    tmux new-window -t $SESSION -n 'docs'
-    tmux send-keys -t $SESSION:1 'cd $HOME/Projects/product-security/product-security-docs && lls' C-m
+    tmux new-window -t $SESSION -n 'documentation'
+    tmux send-keys -t $SESSION:1 'clear && cd $HOME/Projects/product-security/product-security-docs && lls' C-m
 
     tmux new-window -t $SESSION -n 'license-verifier'
-    tmux send-keys -t $SESSION:2 'cd $HOME/Projects/product-security/license-verifier && lls' C-m
+    tmux send-keys -t $SESSION:2 'clear && cd $HOME/Projects/product-security/license-verifier && lls' C-m
 
     tmux new-window -t $SESSION -n 'tinker'
-    tmux send-keys -t $SESSION:3 'update' C-m
+    tmux send-keys -t $SESSION:3 'clear && update' C-m
 
     tmux set-option -t $SESSION status on
 fi
