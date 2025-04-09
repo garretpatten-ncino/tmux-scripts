@@ -10,14 +10,14 @@ if [ $? != 0 ]; then
     tmux rename-window 'home'
     tmux send-keys -t $SESSION:0 'clear && echo "" && fastfetch' C-m
 
-    tmux new-window -t $SESSION -n 'documentation'
+    tmux new-window -t $SESSION -n 'docs'
     tmux send-keys -t $SESSION:1 'clear && cd $HOME/Projects/product-security/product-security-docs && lls' C-m
 
-    tmux new-window -t $SESSION -n 'license-verifier'
-    tmux send-keys -t $SESSION:2 'clear && cd $HOME/Projects/product-security/license-verifier && lls' C-m
+    tmux new-window -t $SESSION -n 'llm'
+    tmux send-keys -t $SESSION:2 'ollama run gemma3' C-m
 
-    tmux new-window -t $SESSION -n 'tinker'
-    tmux send-keys -t $SESSION:3 'clear && update' C-m
+    tmux new-window -t $SESSION -n 'projects'
+    tmux send-keys -t $SESSION:3 'clear && cd $HOME/Projects/' C-m
 
     tmux set-option -t $SESSION status on
 fi
