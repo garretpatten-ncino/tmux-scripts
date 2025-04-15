@@ -17,7 +17,7 @@ if [ $? != 0 ]; then
     tmux send-keys -t $SESSION:2 'ollama run gemma3' C-m
 
     tmux new-window -t $SESSION -n 'projects'
-    tmux send-keys -t $SESSION:3 'clear && cd $HOME/Projects/' C-m
+    tmux send-keys -t $SESSION:3 'clear && cd $HOME/Projects/ && lls' C-m
 
     tmux set-option -t $SESSION status on
 fi
